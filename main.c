@@ -17,6 +17,7 @@ int main() {
     int acertou = (chute == n_secret);
 
     if(acertou){
+
         printf("Parabens seu trouxa!\n");
     } else{
         printf("Nop, nao acertou!\n");
