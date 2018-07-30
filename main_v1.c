@@ -1,20 +1,19 @@
 #include <stdio.h>
 
-//#define NUMERO_TENTATIVAS 5
+#define NUMERO_TENTATIVAS 5
 #define NUMERO_SECRETO 42
 
 int main() {
-    printf("******************************************\n");
-    printf("* Bem-vindo ao nosso jogo de adivinhação *\n");
-    printf("******************************************\n");
+//    printf("******************************************\n");
+//    printf("* Bem-vindo ao nosso jogo de adivinhação *\n");
+//    printf("******************************************\n");
 
 //    int n_secret = 42;
     int chute;
-    int tentativas = 1;
+
     printf("O numero secreto blablabalvla %d\n", NUMERO_SECRETO);
-//    for (int tentativas = 0; tentativas < NUMERO_TENTATIVAS; tentativas++) {
-    while (1) {
-        printf("Chute %d\nDa um chute ai: ", tentativas);
+    for (int i = 0; i < NUMERO_TENTATIVAS; i++) {
+        printf("Chute %d\n\nDa um chute ai: ", i);
         scanf("%d", &chute);
 
         printf("Seu chute foi %d\n", chute);
@@ -24,8 +23,9 @@ int main() {
         int menor = (chute < NUMERO_SECRETO);
         int negativo = (chute < 0);
 
-        if (negativo) {
+        if(negativo){
             printf("Vc n pode chutar numeros negaticos.\n");
+            i--;
             continue;
         }
         printf("GIBIMBA\n");
@@ -33,17 +33,15 @@ int main() {
         if (acertou) {
             printf("Parabens seu trouxa! ACERTOU!\n");
             break;
-        } else if (maior) {
+        } else if(maior){
             printf("Nop, nao acertou! Chute maior que o numero!\n");
-        } else if (menor) {
+        } else if(menor){
             printf("Nop, nao acertou! Chute menor que o numero!\n");
 
         }
-        tentativas++;
 
     }
 
-    printf("Você acertou em %d tentativas!\n", tentativas);
 
     return 0;
 }
