@@ -75,8 +75,6 @@ int main() {
 //        tentativas++;
     }
 
-
-
     exit(0);
 }
 
