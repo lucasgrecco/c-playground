@@ -11,6 +11,9 @@ int main() {
 //    int n_secret = 42;
     int chute;
     int tentativas = 1;
+    double pontos = 1000;
+
+
     printf("O numero secreto blablabalvla %d\n", NUMERO_SECRETO);
 //    for (int tentativas = 0; tentativas < NUMERO_TENTATIVAS; tentativas++) {
     while (1) {
@@ -32,6 +35,7 @@ int main() {
 
         if (acertou) {
             printf("Parabens seu trouxa! ACERTOU!\n");
+            printf("PONTOS: %.2f\n", pontos);
             break;
         } else if (maior) {
             printf("Nop, nao acertou! Chute maior que o numero!\n");
@@ -39,11 +43,29 @@ int main() {
             printf("Nop, nao acertou! Chute menor que o numero!\n");
 
         }
-        tentativas++;
 
+        pontos = pontos - ((chute - NUMERO_SECRETO) / 2.0);
+        tentativas++;
     }
 
     printf("Você acertou em %d tentativas!\n", tentativas);
 
     return 0;
 }
+
+
+
+/*
+
+Inteiros:
+
+short = 2 bytes
+int= 4 bytes = 32 bits ≅ 2³²
+long = 8 bytes = 64 bits ≅2⁶⁴
+
+Ponto Flutuante:
+
+float = 4 bytes
+double = 8 bytes = 64 bits
+
+*/

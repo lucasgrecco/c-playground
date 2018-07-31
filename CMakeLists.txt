@@ -3,4 +3,4 @@ project(AluraC1 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(AluraC1 main.c adivinhacao.c ex1.c)
+add_executable(AluraC1 main.c adivinhacao.c ex1.c teste_convercao.c)
